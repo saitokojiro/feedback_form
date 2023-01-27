@@ -13,13 +13,13 @@
     <div class="send_feedback">
         <form class="feedback_form" method="post" action="/review">
             {{csrf_field()}}
-            <input type="text" placeholder="title" class="title_feedback" name="title_feed">
+            <input type="text" placeholder="title" class="title_feedback" name="title_feed" require>
             <div class="rate_container">
 
                 <div class="radio_container">
                     <input type="radio" id="star_One" name="drone" value=1
                            checked>
-                    <label for="star_One" class="star" onclick="change_star(this , 1)"></label>
+                    <label for="star_One" class="star checked" onclick="change_star(this , 1)"></label>
                 </div>
 
                 <div class="radio_container">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="feedback_inputs">
-                <input type="text" placeholder="userName" class="userName_feedback" name="userName_feed">
+                <input type="text" placeholder="userName" class="userName_feedback" name="userName_feed" require>
 
                 <textarea placeholder="comment" class="comment_feedback" name="comment_feed" rows="5" cols="33"></textarea>
             </div>
