@@ -20,6 +20,8 @@ class ReviewModelFactory extends Factory
             //
             'user'=> $this->faker->firstName,
             'title' =>$this->faker->sentence,
+            'picture' =>"https://picsum.photos/800/400",
+            'email' =>$this->faker->email,
             'rate' => \rand(1,5),
             'comment' =>$this->faker->text,
         ];

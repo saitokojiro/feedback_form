@@ -13,11 +13,12 @@ use App\Http\Middleware\XSS;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
-});
+});*/
 Route::group(['middleware'=>['XSS']],function(){
-    Route::get('review',[\App\Http\Controllers\ReviewController::class, "index"]);
-    Route::post('review',[\App\Http\Controllers\ReviewController::class, "form"]);
+    Route::get('/',[\App\Http\Controllers\ReviewController::class, "index"]);
+    Route::post('/',[\App\Http\Controllers\ReviewController::class, "form"]);
 });
 

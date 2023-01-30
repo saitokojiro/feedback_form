@@ -14,6 +14,7 @@ class ReviewModel extends Model
         'title',
         'rate',
         'comment',
+        'picture',
         "created_at",
     ];
 }

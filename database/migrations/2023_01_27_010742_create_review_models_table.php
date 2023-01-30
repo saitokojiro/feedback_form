@@ -16,10 +16,12 @@ return new class extends Migration
     {
         Schema::create('review_models', function (Blueprint $table) {
             $table->id();
+            $table->string('email');
             $table->string('user');
             $table->string('title');
+            $table->string('picture')->nullable();
             $table->integer('rate');
-            $table->text('comment');
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

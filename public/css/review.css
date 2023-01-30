@@ -72,7 +72,33 @@ input[name='drone'] {
     height: 3rem;
     border-radius: 0.5rem;
 }
-
+/*-----------------------*/
+/*-------Filter-----------*/
+/*-----------------------*/
+.container_filter{
+    list-style: none;
+    width: 35rem;
+    height: 10rem;
+    background: #fbfbfb;
+    border: 2px solid #eee9e4;
+    border-radius: 1rem;
+    display: flex;
+}
+.filter{
+    
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+}
+.by_date,
+.by_star{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
 
 /*---------------------------*/
 /*----------List Feedback-------------*/
@@ -126,4 +152,8 @@ input[name='drone'] {
 .feedback_rate-5:after {
     content: '\2605 \2605 \2605 \2605 \2605';
     font-size: 2rem;
+}
+
+.feedBack_img{
+    max-width: 33rem;
 }
