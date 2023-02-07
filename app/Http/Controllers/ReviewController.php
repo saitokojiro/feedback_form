@@ -49,7 +49,7 @@ class ReviewController extends Controller
         $comment = request('comment_feed');
         $userName = request('userName_feed');
         $email = request('email_feed');
-        $img;
+       /* $img;
         if ($request->hasFile("img_feedback")) {
             $file = $request->file("img_feedback");
             $extension = $file->getClientOriginalExtension();
@@ -57,9 +57,9 @@ class ReviewController extends Controller
             $path = 'Upload_Img/';
             $file->move('Upload_Img/', $filename);
             $img = $path . "" . $filename;
-        }
+        }*/
         //dd($request->input('title_feed'));
-
+//if(data === "jpg" && data === "jpeg" && data === "JPG" && data === "JPEG" && data==="png" && data==="PNG") 
         //ReviewModel::save()
         $review = new ReviewModel();
         $review->title = $title;
@@ -67,7 +67,16 @@ class ReviewController extends Controller
         $review->rate = $rate;
         $review->user = $userName;
         $review->email = $email;
-        $review->picture = $img;
+        if ($request->hasFile("img_feedback")) {
+            $file = $request->file("img_feedback");
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $path = 'Upload_Img/';
+            $file->move('Upload_Img/', $filename);
+            if(data === "jpg" && data === "jpeg" && data === "JPG" && data === "JPEG" && data==="png" && data==="PNG")
+            {$review->picture = $path . "" . $filename;}
+        }
+        //$review->picture = $img;
         $review->save();
         //return "data form" . request('title_feed');
         $review = ReviewModel::orderBy("created_at", "desc")->get();

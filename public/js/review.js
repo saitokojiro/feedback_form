@@ -62,3 +62,13 @@ let OrderByStar = (val) => {
     location.replace(window.location.origin);
   }
 };
+
+
+let verifyfile=()=>{
+  let inputimg = document.querySelector(".img_feedback")
+  let valInput = inputimg.value
+  let data = valInput.split(".").pop()
+  console.log(data)
+
+  if(data !== "jpg" && data !== "jpeg" && data !== "JPG" && data !== "JPEG" && data!=="png" && data!=="PNG") return inputimg.value = null;
+}

@@ -24,7 +24,7 @@
                     <textarea placeholder="comment" class="comment_feedback" name="comment_feed" rows="5"
                         cols="33"></textarea>
                     <input type="file" accept="image/png, image/jpeg" class="img_feedback" name="img_feedback"
-                        id="img_feedback" />
+                        id="img_feedback" onchange="verifyfile()"/>
                 </div>
                 <div class="rate_container">
 
